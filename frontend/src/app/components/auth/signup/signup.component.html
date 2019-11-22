@@ -1,0 +1,72 @@
+<div class="text-center container abs-center">
+        <form #frmRegister="ngForm" (ngSubmit)="onRegister(frmRegister)">
+            <img class="mb-4" src="../assets/img/icon_aless.jpg" alt="" width="72" height="72">
+            <div class="form-group">
+                <div class="inputWithIcon">
+                    <input type="text" class="form-control" id="exampleUser" name="name" placeholder="Full name" ngModel required>
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                    <div class="inputWithIcon">
+                        <input type="email" class="form-control" id="exampleEmail" name="email" placeholder="Email" ngModel required>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <div class="inputWithIcon">
+                        <input type="password" class="form-control" id="examplePassword" name="password" placeholder="Password" ngModel required>
+                        <i class="fas fa-key" aria-hidden="true"></i>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <div class="inputWithIcon">
+                        <input type="date" class="form-control" id="exampleBirth" placeholder="Date of birth" name="date" ngModel required>
+                        <i class="fas fa-birthday-cake" aria-hidden="true"></i>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <div class="inputWithIcon">
+                        <select id="city" class="form-control" name="city" ngModel required>
+                                <option>Bogotá</option>
+                                <option>Cali</option>
+                                <option>Cartagena</option>
+                                <option>Envigado</option>
+                                <option>Medellin</option>
+                        </select>
+                        <i class="fas fa-city" aria-hidden="true"></i>
+                    </div>
+            </div>
+            <div class="form-group">
+                <div class="inputWithIcon">
+                    <input type="text" class="form-control" id="exampleAddress" placeholder="Residence address" name="address" ngModel required>
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+            <button type="submit" class = "btn btn-primary">sign up</button>
+            <div style="border-top: 20px solid#fff; padding-top:15px; font-size:85%" >
+                Already have an account?  
+            <a href="#">
+                <a routerLink="/auth/login">login</a>
+            </a>
+            </div>
+            <div style="border-top: 20px solid#fff; padding-top:15px; font-size:85%" class="row">
+                <div class="col-sm-12 mysocial-login">
+                    <h6>Sign up also by:</h6>
+                    <div class="mysocial-login-buttoms">
+                        <a class="mybtn-social" href="#">
+                            <i class="fab fa-facebook-f"></i>Facebook
+                        </a>
+                        <a class="mybtn-social" href="#">
+                                <i class="fab fa-twitter"></i>Twitter
+                        </a>
+                        <a class="mybtn-social" href="#">
+                            <i class="fab fa-google"></i>Google
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    

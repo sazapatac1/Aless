@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.fondoOptions{background: blue;}
+
+.textSubmenu{
+    color: black;
+}
+
+.products{
+    padding-top:70px;
+}
+
+body{
+    padding-top:70px;
+}

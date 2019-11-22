@@ -1,0 +1,15 @@
+.col-lg-3col-md-6mb-3{
+    padding-bottom : 12 px;
+    padding-left : 12px;
+    padding-right : 12px;
+    padding-top : 12px;   
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+    width: 25%;
+}

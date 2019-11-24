@@ -6,6 +6,8 @@ services:
     build: frontend # specify the directory of the Dockerfile
     ports:
       - "4200:4200" # specify port forewarding
+      - "80:80"
+      - "443:443"
     container_name: front-container
     restart: always
  

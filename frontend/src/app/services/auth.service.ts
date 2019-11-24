@@ -8,7 +8,7 @@ import { Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  baseurl = 'http://184.73.71.43:3000/';
+  baseurl = 'http://184.73.71.43:3000';
   authSubject = new BehaviorSubject(false);
   private token: string;
 

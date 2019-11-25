@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [ApiService]
+  providers: [ApiService, AuthService]
 })
 export class ProductsComponent implements OnInit {
 

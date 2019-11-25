@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../services/api.service'
+import {AuthService} from '../../services/auth.service'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +15,8 @@ export class ProductsComponent implements OnInit {
   comments;
   id_userF = '5dd44b972dc16a28c4934d41'
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private auth: AuthService, private router:Router) {
+      this.verifyAccess();
       this.getProducts();
       //this.getAllComments();
       //this.getComments('5dd4307299e4ad2038703d21');
@@ -29,6 +32,17 @@ export class ProductsComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  verifyAccess = () => {
+    this.auth.hasAccess().subscribe(
+      res =>{
+        console.log('has access')
+      },
+      error => {
+        this.router.navigateByUrl('/denied')
+      }
+    )
   }
 
   getComments = (idProduct) =>{
@@ -59,6 +73,11 @@ export class ProductsComponent implements OnInit {
     console.log(message)
     console.log(id_productF)
     this.api.sendCommentary(message, this.id_userF, id_productF).subscribe()
+  }
+
+  logout = () =>{
+    this.auth.logout()
+    this.router.navigateByUrl('/auth/login')
   }
 
   ngOnInit() {

@@ -12,6 +12,8 @@ export class AuthService {
   authSubject = new BehaviorSubject(false);
   private token: string;
 
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json', 'authorization': `token ${this.getToken()}`});
+
   constructor(private http: HttpClient) { }
 
   //users
@@ -43,6 +45,10 @@ export class AuthService {
     this.token = '';
     localStorage.removeItem("ACCESS_TOKEN");
     localStorage.removeItem("EXPIRES_IN");
+  }
+
+  hasAccess(): Observable <any> {
+    return this.http.get(this.baseurl + '/api/hasAccess', {headers: this.httpHeaders});
   }
 
   private saveToken(token: string, expiresIn: string): void {

@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
+import { DeniedComponent } from './components/denied/denied.component';
 //import { LoginComponent } from './components/auth/login/login.component';
 //import { SignupComponent } from './components/auth/signup/signup.component';
 
@@ -14,6 +15,7 @@ import { ProductsComponent } from './components/products/products.component';
   declarations: [
     AppComponent,
     ProductsComponent,
+    DeniedComponent,
     //LoginComponent,
     //SignupComponent,
   ],

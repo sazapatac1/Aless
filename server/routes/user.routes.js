@@ -14,7 +14,7 @@ api.delete('/api/users/:id', userCtrl.deleteUser)
 api.put('/api/users/:id', userCtrl.editUser)
 
 //Auth
-api.get('/api/private', auth, function(req,res){
+api.get('/api/hasAccess', auth, function(req,res){
     res.status(200).send({message: 'Tienes acceso'})
 })
 

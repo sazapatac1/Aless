@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../services/auth.service'
 import {User} from '../../../models/user'
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,17 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value).subscribe(res =>{
       this.router.navigateByUrl('/home')
     })
+  }
+
+  verifyAccess = () =>{
+    this.authService.hasAccess().subscribe(
+      res => {
+        this.router.navigateByUrl('/home')
+      },
+      error => {
+        console.log('No hay token')
+      }
+    )
   }
 
 }

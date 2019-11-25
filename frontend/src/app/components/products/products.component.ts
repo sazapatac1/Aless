@@ -76,8 +76,8 @@ export class ProductsComponent implements OnInit {
   }
 
   logout = () =>{
-    this.auth.logout()
     this.router.navigateByUrl('/auth/login')
+    this.auth.logout()
   }
 
   ngOnInit() {

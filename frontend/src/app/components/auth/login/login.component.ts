@@ -11,7 +11,9 @@ import { error } from '@angular/compiler/src/util';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor(private authService: AuthService, private router:Router) { 
+    this.verifyAccess()
+  }
 
   ngOnInit() {
   }
